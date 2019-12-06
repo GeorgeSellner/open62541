@@ -122,14 +122,14 @@ if(UA_NAMESPACE_ZERO STREQUAL "FULL")
         INTERNAL
     )
 
-    # generate euromap77 namespace which is using euromap83
+    # generate euromap822 namespace which is using euromap83
     ua_generate_nodeset_and_datatypes(
-        NAME "euromap77"
-        FILE_CSV "${PROJECT_SOURCE_DIR}/nodeset/euromap/Opc.Ua.PlasticsRubber.IMM2MES.NodeSet2.csv"
-        FILE_BSD "${PROJECT_SOURCE_DIR}/nodeset/euromap/Opc.Ua.PlasticsRubber.IMM2MES.NodeSet2.bsd"
+        NAME "euromap822"
+        FILE_CSV "${PROJECT_SOURCE_DIR}/nodeset/euromap/Opc.Ua.PlasticsRubber.HotRunner.NodeSet2.csv"
+        FILE_BSD "${PROJECT_SOURCE_DIR}/nodeset/euromap/Opc.Ua.PlasticsRubber.HotRunner.NodeSet2.bsd"
         IMPORT_BSD "UA_TYPES#${FILE_NS_DIRPREFIX}/Schema/Opc.Ua.Types.bsd"
         NAMESPACE_IDX 4
-        FILE_NS "${PROJECT_SOURCE_DIR}/nodeset/euromap/Opc.Ua.PlasticsRubber.IMM2MES.NodeSet2.xml"
+        FILE_NS "${PROJECT_SOURCE_DIR}/nodeset/euromap/Opc.Ua.PlasticsRubber.HotRunner.NodeSet2.xml"
         DEPENDS "euromap83"
         INTERNAL
     )
@@ -137,12 +137,12 @@ if(UA_NAMESPACE_ZERO STREQUAL "FULL")
     add_example(server_nodeset_euromap euromap/server_nodeset_euromap.c
                 ${UA_NODESET_DI_SOURCES}
                 ${UA_NODESET_EUROMAP83_SOURCES}
-                ${UA_NODESET_EUROMAP77_SOURCES}
+                ${UA_NODESET_EUROMAP822_SOURCES}
                 ${UA_TYPES_DI_SOURCES}
                 ${UA_TYPES_EUROMAP83_SOURCES}
-                ${UA_TYPES_EUROMAP77_SOURCES}
+                ${UA_TYPES_EUROMAP822_SOURCES}
                 )
-    add_dependencies(server_nodeset_euromap open62541-generator-ns-euromap77)
+    add_dependencies(server_nodeset_euromap open62541-generator-ns-euromap822)
 
 endif()
 
