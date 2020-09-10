@@ -15,7 +15,7 @@
 
 #include "open62541/namespace_di_generated.h"
 #include "open62541/namespace_euromap83_generated.h"
-#include "open62541/namespace_euromap822_generated.h"
+#include "open62541/namespace_euromap82_2_generated.h"
 
 UA_Boolean running = true;
 
@@ -44,9 +44,9 @@ int main(int argc, char** argv) {
         UA_Server_delete(server);
         return EXIT_FAILURE;
     }
-    retval |= namespace_euromap822_generated(server);
+    retval |= namespace_euromap82_2_generated(server);
     if(retval != UA_STATUSCODE_GOOD) {
-        UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Adding the Euromap822 namespace failed. Please check previous error output.");
+        UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Adding the Euromap82.2 namespace failed. Please check previous error output.");
         UA_Server_delete(server);
         return EXIT_FAILURE;
     }
